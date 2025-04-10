@@ -1,0 +1,4 @@
+[submodule "ext"]
+	path = ext
+	url = https://github.com/microsoft/json-schemas.git
+	branch = main
