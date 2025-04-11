@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.1.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.2.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Semantic Query",
     "description": "Defines shared definitions for queries and filters.",
@@ -792,6 +792,27 @@
                 },
                 "Name": {
                     "description": "The name of the calculation",
+                    "type": "string"
+                },
+                "DataType": {
+                    "description": "The data type of visual calculation",
+                    "enum": [
+                        "Binary",
+                        "Boolean",
+                        "Date",
+                        "DateTime",
+                        "DateTimeZone",
+                        "Decimal",
+                        "Double",
+                        "Duration",
+                        "Integer",
+                        "Json",
+                        "None",
+                        "Null",
+                        "Text",
+                        "Time",
+                        "Variant"
+                    ],
                     "type": "string"
                 }
             },
