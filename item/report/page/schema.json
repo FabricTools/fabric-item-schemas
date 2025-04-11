@@ -1,10 +1,15 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.1.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Page",
     "description": "Defines a single report page.",
     "type": "object",
     "properties": {
+        "$schema": {
+            "description": "Defines the schema to use for an item.",
+            "type": "string",
+            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.1.0/schema.json"
+        },
         "name": {
             "description": "A unique identifier for the page across the whole report.",
             "maxLength": 50,
@@ -83,11 +88,6 @@
                     "description": "Page is created by copilot."
                 }
             ]
-        },
-        "$schema": {
-            "description": "Defines the schema to use for an item.",
-            "type": "string",
-            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json"
         }
     },
     "additionalProperties": false,
@@ -134,7 +134,7 @@
                     }
                 },
                 "filterSortOrder": {
-                    "description": "Defines how the filters sorted - by name or custom sorting\nIf custom sorting, then ordinal property of every filter is used as the sort order, \nfilters where ordinal is skipped will be shown at the end; ordering will fallback to display name of the field.",
+                    "description": "Defines how the filters sorted - by name or custom sorting\nIf custom sorting, then ordinal property of every filter is used as the sort order,\nfilters where ordinal is skipped will be shown at the end; ordering will fallback to display name of the field.",
                     "type": "string",
                     "anyOf": [
                         {
@@ -162,7 +162,7 @@
                     "type": "string"
                 },
                 "displayName": {
-                    "description": "An alternate name to use when displaying this filter - by default the display name of the field will be used, if there is no field or display name, \nthen restatement of the filter will be shown. Only applies to certain filter types.",
+                    "description": "An alternate name to use when displaying this filter - by default the display name of the field will be used, if there is no field or display name,\nthen restatement of the filter will be shown. Only applies to certain filter types.",
                     "type": "string"
                 },
                 "ordinal": {
@@ -171,7 +171,7 @@
                 },
                 "field": {
                     "description": "Defines the field from your data that is filtered.",
-                    "$ref": "../../semanticQuery/1.0.0/schema.json#/definitions/QueryExpressionContainer"
+                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
                 },
                 "type": {
                     "description": "The type of a filter.",
@@ -206,12 +206,15 @@
                         },
                         {
                             "const": "RelativeTime"
+                        },
+                        {
+                            "const": "VisualTopN"
                         }
                     ]
                 },
                 "filter": {
                     "description": "Defines the actual filter definition - it is dependent on the type of filter.",
-                    "$ref": "../../semanticQuery/1.0.0/schema.json#/definitions/FilterDefinition"
+                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/FilterDefinition"
                 },
                 "restatement": {
                     "description": "A custom restatement to show for the filter - only applies to Passthrough filter type. For all other filters, a restatement is generated based on the filter definition.",
@@ -243,7 +246,7 @@
                         },
                         {
                             "const": "Drillthrough",
-                            "description": "Created by drill context that is applied to the page when using drill-through\r\naction from another page."
+                            "description": "Created by drill context that is applied to the page when using drill-through\naction from another page."
                         }
                     ]
                 },
@@ -275,7 +278,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/FilterContainerFormattingObjectsProperties",
@@ -392,7 +395,7 @@
                 },
                 "fieldExpr": {
                     "description": "Field expression for page binding",
-                    "$ref": "../../semanticQuery/1.0.0/schema.json#/definitions/QueryExpressionContainer"
+                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
                 }
             },
             "additionalProperties": false,
@@ -411,7 +414,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/PageInformation",
@@ -431,7 +434,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/PageSize",
@@ -451,7 +454,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Background",
@@ -471,7 +474,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/DisplayArea",
@@ -491,7 +494,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Background",
@@ -511,7 +514,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/OutspacePane",
@@ -531,7 +534,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/FilterCard",
@@ -551,7 +554,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/PageRefresh",
@@ -571,7 +574,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.0.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/PersonalizeVisual",
@@ -726,7 +729,7 @@
                     "description": "Data fields to use for the auto page generation",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.0.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 },
                 "visualContainerConfigurations": {
@@ -758,7 +761,7 @@
                     "description": "Specific data fields used to build this visual from the full set of selected fields",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.0.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 }
             },
