@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.0.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.1.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Semantic Query",
     "description": "Defines shared definitions for queries and filters.",
@@ -60,7 +60,7 @@
             ]
         },
         "QueryExpressionContainer": {
-            "description": "Holds a single expression and associated metadata. \nName, NativeReferenceName, and Annotations may be specified for any expression.\nEach other property represents a specific type of expression and exactly one of these other properties must be specified.",
+            "description": "Holds a single expression and associated metadata.\nName, NativeReferenceName, and Annotations may be specified for any expression.\nEach other property represents a specific type of expression and exactly one of these other properties must be specified.",
             "type": "object",
             "properties": {
                 "Name": {
@@ -266,6 +266,10 @@
                 "NativeColumn": {
                     "description": "The NativeColumn element represents invocation of a column defined using an expression in an underlying query language.",
                     "$ref": "#/definitions/QueryNativeColumn"
+                },
+                "VisualTopN": {
+                    "description": "The VisualTopN element represents a type of filter that limits the amount of data points returned in a query",
+                    "$ref": "#/definitions/QueryVisualTopNExpression"
                 }
             },
             "additionalProperties": false,
@@ -499,7 +503,24 @@
                     "required": [
                         "NativeColumn"
                     ]
+                },
+                {
+                    "required": [
+                        "VisualTopN"
+                    ]
                 }
+            ]
+        },
+        "QueryVisualTopNExpression": {
+            "type": "object",
+            "properties": {
+                "ItemCount": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "ItemCount"
             ]
         },
         "QueryNativeColumn": {
@@ -597,7 +618,7 @@
             "type": "object",
             "properties": {
                 "Cases": {
-                    "description": "Cases are considered in the specified order. \nThe result is the Case.Value of the first case where Case.Condition evaluates to true.\nIf no Case.Condition evaluates to true, the result is the DefaultValue, if DefaultValue is specified.\nOtherwise, the result is null.",
+                    "description": "Cases are considered in the specified order.\nThe result is the Case.Value of the first case where Case.Condition evaluates to true.\nIf no Case.Condition evaluates to true, the result is the DefaultValue, if DefaultValue is specified.\nOtherwise, the result is null.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/QueryCase"
@@ -1237,7 +1258,7 @@
                     }
                 },
                 "Table": {
-                    "description": "An expression, which must be a SourceRef, holding a table to compare against the Expressions. \nThe number of columns in the table must match the number of Expressions.  \nEach row in the table is considered a tuple to be matched against the expressions.",
+                    "description": "An expression, which must be a SourceRef, holding a table to compare against the Expressions.\nThe number of columns in the table must match the number of Expressions.\nEach row in the table is considered a tuple to be matched against the expressions.",
                     "$ref": "#/definitions/QueryExpressionContainer"
                 }
             },
