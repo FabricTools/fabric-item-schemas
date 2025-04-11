@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.2.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Visual container",
     "description": "Defines a single visual or visual group on a report page.",
@@ -8,7 +8,7 @@
         "$schema": {
             "description": "Defines the schema to use for an item.",
             "type": "string",
-            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json"
+            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.2.0/schema.json"
         },
         "name": {
             "description": "A unique identifier for the visual across the whole page.",
@@ -150,6 +150,9 @@
                 "tabOrder": {
                     "description": "Defines the selection order for this visual when using keyboard (tab key)\nto navigate the visuals on the containing page.",
                     "type": "number"
+                },
+                "angle": {
+                    "type": "number"
                 }
             },
             "additionalProperties": false,
@@ -184,7 +187,7 @@
                 },
                 "objects": {
                     "description": "Specifies the formatting to be set for different \"objects\" of the visual.",
-                    "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/DataViewObjectDefinitions"
+                    "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/DataViewObjectDefinitions"
                 },
                 "visualContainerObjects": {
                     "description": "Specifies the formatting to be set for different \"objects\" of the container.",
@@ -253,7 +256,7 @@
             "type": "object",
             "properties": {
                 "field": {
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer",
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer",
                     "description": "Field to sort by"
                 },
                 "direction": {
@@ -325,7 +328,7 @@
             "type": "object",
             "properties": {
                 "field": {
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer",
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer",
                     "description": "The data field from the semantic model."
                 },
                 "queryRef": {
@@ -342,6 +345,7 @@
                 },
                 "format": {
                     "description": "format string scoped to the visual.",
+                    "maxLength": 255,
                     "type": "string"
                 },
                 "active": {
@@ -363,7 +367,7 @@
             "type": "object",
             "properties": {
                 "parameterExpr": {
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer",
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer",
                     "description": "Defines the parameter field."
                 },
                 "index": {
@@ -415,7 +419,7 @@
                     "description": "Describes the instances that are expanded.\nOptional for the root expansion state.\nMust by Literal expressions.",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 },
                 "isToggled": {
@@ -440,7 +444,7 @@
                     "description": "Describes the instances that are expanded.\nMust by Literal expressions.",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 },
                 "isToggled": {
@@ -468,7 +472,7 @@
                     "description": "Describes the fields in the visual.",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 },
                 "isCollapsed": {
@@ -535,7 +539,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Title",
@@ -555,7 +559,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/SubTitle",
@@ -575,7 +579,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Divider",
@@ -595,7 +599,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Spacing",
@@ -615,7 +619,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Background",
@@ -635,7 +639,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Padding",
@@ -655,7 +659,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/LockAspect",
@@ -675,7 +679,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/VisualContainerGeneralFormattingObjects",
@@ -695,7 +699,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Border",
@@ -715,7 +719,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/DropShadow",
@@ -735,7 +739,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/VisualLink",
@@ -755,7 +759,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/VisualTooltip",
@@ -775,7 +779,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/StylePreset",
@@ -795,7 +799,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/VisualHeader",
@@ -815,7 +819,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/VisualHeaderTooltip",
@@ -1117,7 +1121,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Background",
@@ -1137,7 +1141,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/LockAspect",
@@ -1157,7 +1161,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/VisualGroupGeneralFormattingObjects",
@@ -1232,7 +1236,7 @@
                 },
                 "field": {
                     "description": "Defines the field from your data that is filtered.",
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                 },
                 "type": {
                     "description": "The type of a filter.",
@@ -1275,7 +1279,7 @@
                 },
                 "filter": {
                     "description": "Defines the actual filter definition - it is dependent on the type of filter.",
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/FilterDefinition"
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/FilterDefinition"
                 },
                 "restatement": {
                     "description": "A custom restatement to show for the filter - only applies to Passthrough filter type. For all other filters, a restatement is generated based on the filter definition.",
@@ -1339,7 +1343,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/FilterContainerFormattingObjectsProperties",
