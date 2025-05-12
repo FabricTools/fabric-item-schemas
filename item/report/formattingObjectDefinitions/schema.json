@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.1.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.2.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Formatting Object Definitions",
     "description": "Defines shared definitions for report object formatting.",
@@ -81,13 +81,13 @@
             "properties": {
                 "scopeId": {
                     "description": "Defines the intersection of scopes. For example - product color = red.",
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                 },
                 "wildcard": {
                     "description": "Defines a match against all instances of a given DataView scope. Does not match Subtotals.\nDeprecated: - Use roles instead.",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 },
                 "roles": {
@@ -101,7 +101,7 @@
                     "description": "Matches against the totals and subtotals.",
                     "type": "array",
                     "items": {
-                        "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                        "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                     }
                 },
                 "dataViewWildcard": {
