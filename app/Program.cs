@@ -3,11 +3,10 @@ var subModuleFolder = Path.Combine(rootFolder, "ext");
 var itemsSourceFolder = Path.Combine(rootFolder, "ext", "fabric", "item");
 
 using var git = new Repository(rootFolder, new RepositoryOptions { });
-//using var subModule = new Repository(subModuleFolder);
 var tags = git.Tags.Select(t => t.FriendlyName).ToArray();
 
 Console.WriteLine("::group::Existing Tags");
-Array.ForEach(tags, t => Console.WriteLine(t));
+Array.ForEach(tags, Console.WriteLine);
 Console.WriteLine("::endgroup::");
 
 // Create new local branch
@@ -31,7 +30,9 @@ var matcher = new Matcher(StringComparison.OrdinalIgnoreCase)
 var matchesOrdered = matcher.Execute(new DirectoryInfoWrapper(new DirectoryInfo(itemsSourceFolder)))
     .Files.Select(f =>
     {
-        var segments = f.Path.Split(['/', '\\']).Where(s => !s.Equals("definition", StringComparison.InvariantCultureIgnoreCase)).ToArray();
+        var segments = f.Path.Split(['/', '\\'])
+            .Where(s => !s.Equals("definition", StringComparison.InvariantCultureIgnoreCase))
+            .ToArray();
         var version = NuGet.Versioning.SemanticVersion.Parse(segments[segments.Length - 2]);
         return new
         {
@@ -45,7 +46,8 @@ var matchesOrdered = matcher.Execute(new DirectoryInfoWrapper(new DirectoryInfo(
             /* graphInstance-dataSources-1.0.0 */
         };
     })
-    .OrderBy(x => x.Target).ThenBy(x => x.Version);
+    .OrderBy(x => x.Target)
+    .ThenBy(x => x.Version);
 
 foreach (var match in matchesOrdered)
 {
@@ -67,7 +69,6 @@ foreach (var match in matchesOrdered)
 
     // Commit the change
     // Create a tag
-    //Console.WriteLine($"Status: {git.RetrieveStatus(targetPath)}");
     if (git.RetrieveStatus(targetPath) is FileStatus.ModifiedInWorkdir or FileStatus.NewInWorkdir)
     {
         Commands.Stage(git, targetPath);
@@ -75,5 +76,4 @@ foreach (var match in matchesOrdered)
         git.Commit($"Added: {match.Path}", author, author);
         git.ApplyTag(tag);
     }
-
 }
