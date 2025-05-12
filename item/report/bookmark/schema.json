@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.2.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.3.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Bookmark",
     "description": "Defines a bookmark that captures the state of a report.",
@@ -8,7 +8,7 @@
         "$schema": {
             "description": "Defines the schema to use for an item.",
             "type": "string",
-            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.2.0/schema.json"
+            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.3.0/schema.json"
         },
         "displayName": {
             "description": "Display name for the bookmark.",
@@ -318,7 +318,7 @@
             "properties": {
                 "merge": {
                     "description": "ObjectDefinitions to be merged with the target.",
-                    "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/DataViewObjectDefinitions"
+                    "$ref": "../../formattingObjectDefinitions/1.3.0/schema.json#/definitions/DataViewObjectDefinitions"
                 },
                 "remove": {
                     "description": "ObjectDefinitions to be deleted from the existing instances.",
@@ -342,7 +342,7 @@
                     "type": "string"
                 },
                 "selector": {
-                    "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector",
+                    "$ref": "../../formattingObjectDefinitions/1.3.0/schema.json#/definitions/Selector",
                     "description": "Scope at which to apply this change."
                 }
             },
@@ -385,6 +385,9 @@
                 "length": {
                     "description": "Number of fields created by the parameter.",
                     "type": "number"
+                },
+                "sortDirection": {
+                    "description": "If the sort direction is set, the visual is sorted by this field parameter.\nThe implication of a visual being sorted by a field parameter is as follows during parameter resolution:\n- If none of the newly projected fields exist in the sort list, apply the parameter sort direction to the first projected field and add it to the end of the sort list.\n- If all the projected fields in the sort list have the opposite sort direction as the parameter's sort direction, flip the parameter's sort direction."
                 }
             },
             "additionalProperties": false,
@@ -589,7 +592,7 @@
             "additionalProperties": {
                 "type": "array",
                 "items": {
-                    "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/DataRepetitionSelector"
+                    "$ref": "../../formattingObjectDefinitions/1.3.0/schema.json#/definitions/DataRepetitionSelector"
                 }
             }
         },
