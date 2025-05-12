@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.1.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Report",
     "description": "Defines a report and its pages, visuals, settings, and additional information.",
@@ -8,7 +8,7 @@
         "$schema": {
             "description": "Defines the schema to use for an item.",
             "type": "string",
-            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.1.0/schema.json"
+            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json"
         },
         "themeCollection": {
             "$ref": "#/definitions/ThemeCollection",
@@ -219,7 +219,7 @@
                 },
                 "field": {
                     "description": "Defines the field from your data that is filtered.",
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/QueryExpressionContainer"
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/QueryExpressionContainer"
                 },
                 "type": {
                     "description": "The type of a filter.",
@@ -262,7 +262,7 @@
                 },
                 "filter": {
                     "description": "Defines the actual filter definition - it is dependent on the type of filter.",
-                    "$ref": "../../semanticQuery/1.1.0/schema.json#/definitions/FilterDefinition"
+                    "$ref": "../../semanticQuery/1.2.0/schema.json#/definitions/FilterDefinition"
                 },
                 "restatement": {
                     "description": "A custom restatement to show for the filter - only applies to Passthrough filter type. For all other filters, a restatement is generated based on the filter definition.",
@@ -326,7 +326,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/FilterContainerFormattingObjectsProperties",
@@ -360,7 +360,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/OutspacePane",
@@ -380,7 +380,7 @@
                         "properties": {
                             "selector": {
                                 "description": "Defines the scope at which to apply the formatting for this object.\nCan also define rules for matching highlighted values and how multiple definitions for the same property should be ordered.",
-                                "$ref": "../../formattingObjectDefinitions/1.1.0/schema.json#/definitions/Selector"
+                                "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
                                 "$ref": "#/definitions/Section",
