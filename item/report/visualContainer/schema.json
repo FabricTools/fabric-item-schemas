@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Visual container",
     "description": "Defines a single visual or visual group on a report page.",
@@ -8,7 +8,7 @@
         "$schema": {
             "description": "Defines the schema to use for an item.",
             "type": "string",
-            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json"
+            "const": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json"
         },
         "name": {
             "description": "A unique identifier for the visual across the whole page.",
@@ -21,7 +21,7 @@
         },
         "visual": {
             "description": "Defines a chart to be shown inside of this container.",
-            "$ref": "../../visualConfiguration/1.6.0/schema-embedded.json"
+            "$ref": "../../visualConfiguration/1.7.0/schema-embedded.json"
         },
         "visualGroup": {
             "description": "Defines that this container should be used as a grouping container.",
@@ -211,7 +211,7 @@
                                 "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
-                                "$ref": "../../visualConfiguration/1.6.0/schema-embedded.json#/definitions/Background",
+                                "$ref": "../../visualConfiguration/1.7.0/schema-embedded.json#/definitions/Background",
                                 "description": "Describes the properties of the object to apply formatting changes to."
                             }
                         },
@@ -231,7 +231,7 @@
                                 "$ref": "../../formattingObjectDefinitions/1.2.0/schema.json#/definitions/Selector"
                             },
                             "properties": {
-                                "$ref": "../../visualConfiguration/1.6.0/schema-embedded.json#/definitions/LockAspect",
+                                "$ref": "../../visualConfiguration/1.7.0/schema-embedded.json#/definitions/LockAspect",
                                 "description": "Describes the properties of the object to apply formatting changes to."
                             }
                         },
