@@ -1,5 +1,5 @@
 {
-    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.2.0/schema.json",
+    "$id": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.3.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Formatting Object Definitions",
     "description": "Defines shared definitions for report object formatting.",
@@ -66,6 +66,21 @@
                         {
                             "const": 2,
                             "description": "If a highlighted value exists, it's selected. Otherwise, the non-highlighted value is selected."
+                        }
+                    ]
+                },
+                "hierarchyMatching": {
+                    "description": "Describes how the selector matches hierarchy values.\nThis also changes how the query is generated for {@link DataViewScopeWildcard} selectors.\nNow those selectors can produce scopedValues for the level those match.\n\nThere are two ways that we can match values in the hierarchy:\n1.",
+                    "default": "`HierarchyMatching.Full` - Only leaf levels are matched.\r\nUses the values array which exits only for the last level {@link DataViewMatrixNode.values }\r\n\r\n2. {@link `HierarchyMatching.Partial`} - Can match any specific level. Which works two different ways:\r\n\r\n- Getting the value from the subtotal if we match the whole hierarchy.\r\n\r\n- Getting the value from scoped values if match specific level {@link DataViewMatrixNode.nodeValues }.\r\n\r\n(Using {@link DataViewScopeWildcard }).",
+                    "type": "number",
+                    "anyOf": [
+                        {
+                            "const": 0,
+                            "description": "Only leaf levels are matched."
+                        },
+                        {
+                            "const": 1,
+                            "description": "All levels are matched."
                         }
                     ]
                 },
